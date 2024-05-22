@@ -40,8 +40,13 @@ class _Edit_PageState extends State<Edit_Page> {
                     editicon: Icons.business_center_outlined,
                     edittext: 'Experience'),
               ),
-              skillcategories(
-                  editicon: Icons.design_services_outlined, edittext: 'Skills'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/skills');
+                },
+                child: skillcategories(
+                    editicon: Icons.design_services_outlined, edittext: 'Skills'),
+              ),
               skillcategories(
                   editicon: Icons.my_location_outlined, edittext: 'Summary'),
               skillcategories(
