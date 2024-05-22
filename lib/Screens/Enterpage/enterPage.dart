@@ -15,7 +15,7 @@ class _EntryPageState extends State<EntryPage> {
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: BottomAppBar(
-          height: 120,
+          height: 130,
 
           child: Row(
 
@@ -31,11 +31,11 @@ class _EntryPageState extends State<EntryPage> {
 
               bottomselectionBar(
                   selecticons: Icons.bookmark_border_rounded,
-                  selecttext: 'Edit'),
+                  selecttext: 'Saved'),
               bottomselectionBar(
-                  selecticons: Icons.edit_note_rounded, selecttext: 'Edit'),
+                  selecticons: Icons.file_download_outlined, selecttext: 'Export'),
               bottomselectionBar(
-                  selecticons: Icons.edit_note_rounded, selecttext: 'Edit'),
+                  selecticons: Icons.share, selecttext: 'Edit'),
             ],
           ),
         ),
@@ -50,8 +50,10 @@ class _EntryPageState extends State<EntryPage> {
     );
   }
 
-  Container bottomselectionBar({required selecticons, required selecttext}) {
+  Widget bottomselectionBar({required selecticons, required selecttext}) {
     return Container(
+
+      margin: EdgeInsets.all(7),
       alignment: Alignment.center,
       height: 100,
       width: 80,
@@ -65,7 +67,7 @@ class _EntryPageState extends State<EntryPage> {
           Icon(
             selecticons,
             color: Colors.purple,
-            size: 50,
+            size: 40,
           ),
           Text(
             selecttext,

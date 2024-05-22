@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Edit_Page extends StatefulWidget {
   const Edit_Page({super.key});
@@ -31,8 +32,14 @@ class _Edit_PageState extends State<Edit_Page> {
                 child: skillcategories(
                     editicon: Icons.school_outlined, edittext: 'Education'),
               ),
-              skillcategories(
-                  editicon: Icons.business_center_outlined, edittext: 'Experiance'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/experience');
+                },
+                child: skillcategories(
+                    editicon: Icons.business_center_outlined,
+                    edittext: 'Experience'),
+              ),
               skillcategories(
                   editicon: Icons.design_services_outlined, edittext: 'Skills'),
               skillcategories(
@@ -42,7 +49,8 @@ class _Edit_PageState extends State<Edit_Page> {
               skillcategories(
                   editicon: Icons.folder_shared_outlined, edittext: 'Projects'),
               skillcategories(
-                  editicon: Icons.favorite_border_outlined, edittext: 'Interests'),
+                  editicon: Icons.favorite_border_outlined,
+                  edittext: 'Interests'),
               skillcategories(
                   editicon: Icons.school_outlined, edittext: 'Awards'),
               skillcategories(
@@ -63,11 +71,22 @@ class _Edit_PageState extends State<Edit_Page> {
 
   Container skillcategories({required editicon, required edittext}) {
     return Container(
-      padding: EdgeInsets.all(8),
+      // padding: EdgeInsets.all(8),
+      margin: EdgeInsets.all(8),
       alignment: Alignment.center,
       height: 120,
       width: 120,
+
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            spreadRadius: 3,
+            blurRadius: 4,
+            offset: Offset.fromDirection(5),
+            color: Colors.black45,
+            blurStyle: BlurStyle.outer,
+          )
+        ],
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.black),
       ),
