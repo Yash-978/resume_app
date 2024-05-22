@@ -112,10 +112,7 @@ Column UDF_Education_Icon() {
   var txtschool;
   return Column(
     children: [
-      const Text(
-        'Education',
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-      ),
+
       Container(
         height: 120,
         width: 350,

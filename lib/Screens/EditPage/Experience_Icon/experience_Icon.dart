@@ -1,8 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import
-
-'../Education_Icon/UDF_education_icon.dart';
+import '../Education_Icon/UDF_education_icon.dart';
 
 class ExperienceIcon extends StatefulWidget {
   const ExperienceIcon({super.key});
@@ -51,58 +50,29 @@ class _ExperienceIconState extends State<ExperienceIcon> {
           children: [
             Column(
               children: [
+                experience_Info(h * 0.110, w * 0.850, section_Title: 'Section Title', expHint_Text: 'Experience'),
                 SizedBox(
-                  height: h * 0.02,
+                  height: h * 0.020,
                 ),
                 Container(
-                  height: h * 0.120,
+                  height: h * 0.060,
                   width: w * 0.850,
                   decoration: BoxDecoration(
-                    // boxShadow: [
-                    // BoxShadow(
-                    //   // blurStyle: BlurStyle.outer,
-                    //   color: Colors.black12,
-                    //   spreadRadius: BorderSide.strokeAlignOutside,
-                    //   blurStyle: BlurStyle.outer,
-                    //   // offset: Offset.fromDirection(BorderSide.strokeAlignOutside)
-                    // )
-                    // ],
+                    // color: Colors.deepPurpleAccent.shade200,
                     border: Border.all(
-                      // color: Colors.black,
+                      color: Colors.deepPurpleAccent.shade200,
                     ),
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(40),
                   ),
-                  child: Column(
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'Section Title',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide(
-                            color: Colors.black,
-                            width: 1,
-                          ),
-                        ),
-                          focusedBorder:  OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15),
-                            borderSide: BorderSide(
-                              color: Colors.deepPurpleAccent.shade200,
-                              width: 1,
-                            ),
-
-                          )
-                        ),
-                      )
+                      Icon(Icons.add,color: Colors.deepPurpleAccent.shade200,),
+                      Text('Add Experience',style: TextStyle(color: Colors.deepPurpleAccent.shade200,fontSize: 20),)
                     ],
                   ),
-                )
+                ),
+                 SizedBox(height: h*0.020,),
+                 experience_Info(h * 0.120, w * 0.850, section_Title: 'Section Title', expHint_Text: 'Experience',),
               ],
             ),
           ],
@@ -110,7 +80,71 @@ class _ExperienceIconState extends State<ExperienceIcon> {
       ),
     );
   }
+
+  Container experience_Info(
+    double h,
+    double w,{required section_Title,required expHint_Text}
+  ) {
+    return Container(
+      height: h,
+      width: w,
+      // margin: EdgeInsets.all(8),
+      // padding: EdgeInsets.only(left: 4),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black54,
+            blurRadius: 1,
+            spreadRadius: 1,
+            offset: Offset(0, 1),
+          )
+        ],
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 16),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                section_Title,
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            width: w * 0.880,
+            child: TextFormField(
+              // maxLines: ,
+
+              decoration: InputDecoration(
+                  hintText: expHint_Text,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                      width: 1,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                      color: Colors.deepPurpleAccent.shade200,
+                      // width: 1,
+                    ),
+                  )),
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }
-
-
-
