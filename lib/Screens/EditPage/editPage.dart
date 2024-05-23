@@ -69,11 +69,21 @@ class _Edit_PageState extends State<Edit_Page> {
                 child: skillcategories(
                     editicon: Icons.folder_shared_outlined, edittext: 'Projects'),
               ),
-              skillcategories(
-                  editicon: Icons.favorite_border_outlined,
-                  edittext: 'Interests'),
-              skillcategories(
-                  editicon: Icons.school_outlined, edittext: 'Awards'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/interest');
+                },
+                child: skillcategories(
+                    editicon: Icons.favorite_border_outlined,
+                    edittext: 'Interests'),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/awards');
+                },
+                child: skillcategories(
+                    editicon: Icons.school_outlined, edittext: 'Awards'),
+              ),
               skillcategories(
                   editicon: Icons.school_outlined, edittext: 'Activities'),
               skillcategories(

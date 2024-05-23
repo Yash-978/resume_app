@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Utils/section_Title_container.dart';
@@ -54,86 +55,126 @@ class _ProjectPageState extends State<ProjectPage> {
           ),
           body: TabBarView(
             children: [
-              Column(
-                children: [
-                  section_Title_universal(universal_HintText: 'Project'),
-                  SizedBox(
-                    height: h * 0.020,
-                  ),
-                  Container(
-                    height: h * 0.060,
-                    width: w * 0.900,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                            color: Colors.deepPurpleAccent.shade200)),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.add,
-                              color: Colors.deepPurpleAccent.shade200,
-                            ),
-                            Text(
-                              'Add Project',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 18,
-                                  color: Colors.deepPurpleAccent.shade200),
-                            ),
-                          ],
-                        ),
-                      ],
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    section_Title_universal(universal_HintText: 'Project'),
+                    SizedBox(
+                      height: h * 0.020,
                     ),
-                  ),
-                  SizedBox(
-                    height: h * 0.020,
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16),
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Project 1',
+                    Container(
+                      height: h * 0.060,
+                      width: w * 0.900,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                              color: Colors.deepPurpleAccent.shade200)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: Colors.deepPurpleAccent.shade200,
+                          ),
+                          Text(
+                            'Add Project',
                             style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.deepPurpleAccent.shade200,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20,
+                                color: Colors.deepPurpleAccent.shade200),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: h * 0.020,
+                    ),
+                    Container(
+                      height: h*0.500,
+                      width: w*0.900,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black12)),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 16),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    'Project 1',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.deepPurpleAccent.shade200,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: w * 0.590,
+                              ),
+                              Icon(
+                                Icons.highlight_remove_rounded,
+                                color: Colors.deepPurpleAccent.shade200,
+                                size: 30,
+                              )
+                            ],
+                          ),
+                          SizedBox(height: h*0.020,),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 16),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'Title',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                          projectTextFormField(w*0.850,h*0.100, projectHintText: 'Title', project_Controller: txtprojectTitle, project_Maxline: 1,),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 16),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'Detail',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                          projectTextFormField(w*0.850,h*0.200, projectHintText: '', project_Controller: txtprojectTitle, project_Maxline: 6,),
+                        ],
                       ),
-                      SizedBox(
-                        width: w * 0.590,
-                      ),
-                      Icon(
-                        Icons.highlight_remove_rounded,
-                        color: Colors.deepPurpleAccent.shade200,
-                        size: 30,
-                      )
-                    ],
-                  ),
-                  SizedBox(height: h*0.020,),
-
-                  projectTextFormField(w*0.850, projectHintText: 'Title', project_Controller: txtprojectTitle,),
+                    ),
 
 
-                ],
+
+                  ],
+                ),
               ),
             ],
           ),
         ));
   }
 
-  SizedBox projectTextFormField(double w,{required projectHintText,required project_Controller}) {
+  SizedBox projectTextFormField(double w,double h,{required projectHintText,required project_Controller,required project_Maxline}) {
     return SizedBox(
                   width: w,
+                  height: h,
                   child: TextFormField(
                     controller: project_Controller,
+                    maxLines: project_Maxline,
                     decoration: InputDecoration(
                       hintText: projectHintText,
                       

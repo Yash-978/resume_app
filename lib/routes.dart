@@ -2,9 +2,11 @@
 
 import 'package:flutter/cupertino.dart';
 
+import 'Screens/Awards/awards.dart';
 import 'Screens/EditPage/Education_Icon/educationIcon.dart';
 
 import 'Screens/EditPage/Experience_Icon/experience_Icon.dart';
+import 'Screens/EditPage/Interests/interest.dart';
 import 'Screens/EditPage/Projects/projects.dart';
 import 'Screens/EditPage/Reference/reference.dart';
 import 'Screens/EditPage/Skills/skills.dart';
@@ -24,6 +26,8 @@ class AppRoutes
     '/summary':(context)=>SummaryPage(),
     '/reference':(context)=>ReferencePage(),
     '/projects':(context)=>ProjectPage(),
+    '/interest':(context)=>InterestPage(),
+    '/awards':(context)=>AwardsPage(),
 
   };
 }
