@@ -9,8 +9,11 @@ class ProjectPage extends StatefulWidget {
   @override
   State<ProjectPage> createState() => _ProjectPageState();
 }
-TextEditingController txtprojectTitle= TextEditingController();
-TextEditingController txtprojectDetail= TextEditingController();
+
+TextEditingController txtprojectTitle = TextEditingController();
+TextEditingController txtprojectDetail = TextEditingController();
+TextEditingController txtproject_SectionTitle = TextEditingController();
+
 class _ProjectPageState extends State<ProjectPage> {
   @override
   Widget build(BuildContext context) {
@@ -19,6 +22,38 @@ class _ProjectPageState extends State<ProjectPage> {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
+          bottomNavigationBar: BottomAppBar(
+            height: h * 0.090,
+            padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
+            child: GestureDetector(
+              onTap: () {
+                ProjectTitle = txtprojectTitle.text;
+                ProjectDetail = txtprojectDetail.text;
+                Project_SectionTitle = txtproject_SectionTitle.text;
+                // Course=txtcourse.text;
+                // Grade=txtgrade.text;
+                // School=txtschool.text;
+                Navigator.of(context).pushNamed('/editpage');
+              },
+              child: Container(
+                height: 0.120,
+                width: 0.200,
+                decoration: BoxDecoration(
+                  color: Colors.deepPurpleAccent.shade200,
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: Colors.deepPurpleAccent.shade200),
+                ),
+                child: Center(
+                    child: Text(
+                  'Save',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                )),
+              ),
+            ),
+          ),
           appBar: AppBar(
             title: Text(
               'Projects',
@@ -34,7 +69,7 @@ class _ProjectPageState extends State<ProjectPage> {
               tabs: [
                 Tab(
                   child: Text(
-                    'Summary',
+                    'Projects',
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   ),
                 ),
@@ -58,7 +93,9 @@ class _ProjectPageState extends State<ProjectPage> {
               SingleChildScrollView(
                 child: Column(
                   children: [
-                    section_Title_universal(universal_HintText: 'Project'),
+                    section_Title_universal(
+                        universal_HintText: 'Project',
+                        sectionTitle_Controlller: txtproject_SectionTitle),
                     SizedBox(
                       height: h * 0.020,
                     ),
@@ -90,18 +127,18 @@ class _ProjectPageState extends State<ProjectPage> {
                       height: h * 0.020,
                     ),
                     Container(
-                      height: h*0.500,
-                      width: w*0.900,
+                      height: h * 0.500,
+                      width: w * 0.900,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(color: Colors.black12)),
                       child: Column(
                         children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 16),
-                                child: Align(
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
                                     'Project 1',
@@ -112,18 +149,18 @@ class _ProjectPageState extends State<ProjectPage> {
                                     ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: w * 0.590,
-                              ),
-                              Icon(
-                                Icons.highlight_remove_rounded,
-                                color: Colors.deepPurpleAccent.shade200,
-                                size: 30,
-                              )
-                            ],
+                                Spacer(),
+                                Icon(
+                                  Icons.highlight_remove_rounded,
+                                  color: Colors.deepPurpleAccent.shade200,
+                                  size: 30,
+                                )
+                              ],
+                            ),
                           ),
-                          SizedBox(height: h*0.020,),
+                          SizedBox(
+                            height: h * 0.020,
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(left: 16),
                             child: Align(
@@ -138,7 +175,13 @@ class _ProjectPageState extends State<ProjectPage> {
                               ),
                             ),
                           ),
-                          projectTextFormField(w*0.850,h*0.100, projectHintText: 'Title', project_Controller: txtprojectTitle, project_Maxline: 1,),
+                          projectTextFormField(
+                            w * 0.850,
+                            h * 0.100,
+                            projectHintText: 'Title',
+                            project_Controller: txtprojectTitle,
+                            project_Maxline: 1,
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(left: 16),
                             child: Align(
@@ -153,13 +196,16 @@ class _ProjectPageState extends State<ProjectPage> {
                               ),
                             ),
                           ),
-                          projectTextFormField(w*0.850,h*0.200, projectHintText: '', project_Controller: txtprojectTitle, project_Maxline: 6,),
+                          projectTextFormField(
+                            w * 0.850,
+                            h * 0.200,
+                            projectHintText: '',
+                            project_Controller: txtprojectDetail,
+                            project_Maxline: 6,
+                          ),
                         ],
                       ),
                     ),
-
-
-
                   ],
                 ),
               ),
@@ -168,26 +214,31 @@ class _ProjectPageState extends State<ProjectPage> {
         ));
   }
 
-  SizedBox projectTextFormField(double w,double h,{required projectHintText,required project_Controller,required project_Maxline}) {
+  SizedBox projectTextFormField(double w, double h,
+      {required projectHintText,
+      required project_Controller,
+      required project_Maxline}) {
     return SizedBox(
-                  width: w,
-                  height: h,
-                  child: TextFormField(
-                    controller: project_Controller,
-                    maxLines: project_Maxline,
-                    decoration: InputDecoration(
-                      hintText: projectHintText,
-                      
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors.deepPurpleAccent.shade200),
-                          borderRadius: BorderRadius.circular(15)),
-                    ),
-                  ),
-                );
+      width: w,
+      height: h,
+      child: TextFormField(
+        controller: project_Controller,
+        maxLines: project_Maxline,
+        decoration: InputDecoration(
+          hintText: projectHintText,
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+            borderRadius: BorderRadius.circular(15),
+          ),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.deepPurpleAccent.shade200),
+              borderRadius: BorderRadius.circular(15)),
+        ),
+      ),
+    );
   }
 }
+
+String? ProjectTitle = '';
+String? ProjectDetail = '';
+String? Project_SectionTitle = '';

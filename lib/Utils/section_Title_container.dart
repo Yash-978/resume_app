@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-Container section_Title_universal({required universal_HintText}) {
+
+Container section_Title_universal({required universal_HintText,required sectionTitle_Controlller}) {
+  var h;
+  var w;
   return Container(
     height: 110,
     width: 360,
@@ -38,6 +41,7 @@ Container section_Title_universal({required universal_HintText}) {
         SizedBox(
           width: 350,
           child: TextFormField(
+            controller: sectionTitle_Controlller,
             // maxLines: ,
             decoration: InputDecoration(
                 hintText: universal_HintText, //expHint_Text

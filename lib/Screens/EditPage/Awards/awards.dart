@@ -12,12 +12,42 @@ class AwardsPage extends StatefulWidget {
   State<AwardsPage> createState() => _AwardsPageState();
 }
 TextEditingController txtawards=TextEditingController();
+TextEditingController txtawards_SectionTitle=TextEditingController();
 class _AwardsPageState extends State<AwardsPage> {
   @override
   Widget build(BuildContext context) {
     double h=MediaQuery.of(context).size.height;
     double w=MediaQuery.of(context).size.width;
     return DefaultTabController(length: 3, child: Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        height: h * 0.090,
+        padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
+        child: GestureDetector(
+          onTap: () {
+            // Course=txtcourse.text;
+            // Grade=txtgrade.text;
+            // School=txtschool.text;
+            Navigator.of(context).pushNamed('/editpage');
+          },
+          child: Container(
+            height: 0.120,
+            width: 0.200,
+            decoration: BoxDecoration(
+              color: Colors.deepPurpleAccent.shade200,
+              borderRadius: BorderRadius.circular(30),
+              border: Border.all(color: Colors.deepPurpleAccent.shade200),
+            ),
+            child: Center(
+                child: Text(
+                  'Save',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                )),
+          ),
+        ),
+      ),
       appBar: AppBar(
         bottom: TabBar(tabs: [
           Tab(
@@ -48,7 +78,7 @@ class _AwardsPageState extends State<AwardsPage> {
                 SizedBox(
                   height: h * 0.020,
                 ),
-                section_Title_universal(universal_HintText: 'Interest'),
+                section_Title_universal(universal_HintText: 'Interest', sectionTitle_Controlller: txtawards_SectionTitle),
                 SizedBox(
                   height: h * 0.020,
                 ),
@@ -135,4 +165,8 @@ class Awards_Controller_Model {
 List<Awards_Controller_Model> Awards_Controller_List = [
 
   Awards_Controller_Model(txtawards: txtawards)];
+
+
+String? Awards='';
+String? Awards_SectionTitle='';
 

@@ -1,13 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:resume_app/Screens/EditPage/Reference/reference.dart';
+import 'package:resume_app/Utils/section_Title_container.dart';
 
 // import '../Education_Icon/UDF_education_icon.dart';
 TextEditingController txtcourse = TextEditingController();
 TextEditingController txtschool = TextEditingController();
 TextEditingController txtgrade = TextEditingController();
 TextEditingController txtexperience = TextEditingController();
-
+TextEditingController txtexperience_SectionTitle = TextEditingController();
+TextEditingController txtcompany=TextEditingController();
+TextEditingController exptxtjobTitle=TextEditingController();
 class ExperienceIcon extends StatefulWidget {
   const ExperienceIcon({super.key});
 
@@ -23,6 +27,35 @@ class _ExperienceIconState extends State<ExperienceIcon> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        bottomNavigationBar: BottomAppBar(
+          height: h * 0.090,
+          padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
+          child: GestureDetector(
+            onTap: () {
+              Company=txtcompany.text;
+              Jobtitle=exptxtjobTitle.text;
+
+              Navigator.of(context).pushNamed('/editpage');
+            },
+            child: Container(
+              height: 0.120,
+              width: 0.200,
+              decoration: BoxDecoration(
+                color: Colors.deepPurpleAccent.shade200,
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(color: Colors.deepPurpleAccent.shade200),
+              ),
+              child: Center(
+                  child: Text(
+                    'Save',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  )),
+            ),
+          ),
+        ),
         appBar: AppBar(
           title: Text(
             'Experiance',
@@ -56,37 +89,9 @@ class _ExperienceIconState extends State<ExperienceIcon> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  Container(
-                    height: h * 0.120,
-                    width: w * 0.900,
-                    // margin: EdgeInsets.all(8),
-                    // padding: EdgeInsets.only(left: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black54,
-                          blurRadius: 1,
-                          spreadRadius: 1,
-                          offset: Offset(0, 1),
-                        )
-                      ],
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        expHeading_Text(section_Title: 'Section Title'),
-                        Exp_textFormField(
-                          w * 0.880,
-                          expHint_Text: 'Experience',
-                          expController: txtexperience,
-                        )
-                      ],
-                    ),
-                  ),
+                  section_Title_universal(universal_HintText: 'Experience', sectionTitle_Controlller:txtexperience_SectionTitle ),
+
+
                   SizedBox(
                     height: h * 0.020,
                   ),
@@ -148,7 +153,7 @@ class _ExperienceIconState extends State<ExperienceIcon> {
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  'Education 1',
+                                  'Experience 1',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w600,
@@ -157,9 +162,7 @@ class _ExperienceIconState extends State<ExperienceIcon> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: w * 0.570,
-                            ),
+                            Spacer(),
                             Icon(
                               Icons.highlight_remove_rounded,
                               color: Colors.deepPurpleAccent.shade200,
@@ -167,39 +170,39 @@ class _ExperienceIconState extends State<ExperienceIcon> {
                             )
                           ],
                         ),
-                        expHeading_Text(section_Title: 'Course / Degree'),
+                        expHeading_Text(section_Title: 'Company Name'),
                         SizedBox(
                           height: h * 0.010,
                         ),
                         Exp_textFormField(
                           w * 0.880,
-                          expHint_Text: 'Course/Degree',
-                          expController: txtcourse,
+                          expHint_Text: 'Company Name',
+                          expController: txtcompany,
                         ),
                         SizedBox(
                           height: h * 0.020,
                         ),
-                        expHeading_Text(section_Title: 'School / University'),
+                        expHeading_Text(section_Title: 'Job Title'),
                         SizedBox(
                           height: h * 0.010,
                         ),
                         Exp_textFormField(
                           w * 0.880,
-                          expHint_Text: 'School/University',
-                          expController: txtschool,
+                          expHint_Text: 'Job Title',
+                          expController: txtjobTitle,
                         ),
                         SizedBox(
                           height: h * 0.020,
                         ),
-                        expHeading_Text(section_Title: 'Grade / Score'),
-                        SizedBox(
-                          height: h * 0.010,
-                        ),
-                        Exp_textFormField(
-                          w * 0.880,
-                          expHint_Text: 'Grade/Score',
-                          expController: txtgrade,
-                        )
+                        // expHeading_Text(section_Title: 'Detail'),
+                        // SizedBox(
+                        //   height: h * 0.010,
+                        // ),
+                        // Exp_textFormField(
+                        //   w * 0.880,
+                        //   expHint_Text: 'Grade/Score',
+                        //   expController: txtgrade,
+                        // )
                       ],
                     ),
                   ),
@@ -376,3 +379,5 @@ class _ExperienceIconState extends State<ExperienceIcon> {
 //     return
 //   }
 // }
+String? Company='';
+String? Jobtitle='';

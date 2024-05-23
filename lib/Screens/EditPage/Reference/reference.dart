@@ -13,9 +13,10 @@ class ReferencePage extends StatefulWidget {
 
 TextEditingController txtrefereeName = TextEditingController();
 TextEditingController txtjobTitle = TextEditingController();
-TextEditingController txtComapnyName = TextEditingController();
+TextEditingController txtCompanyName = TextEditingController();
 TextEditingController txtEmail = TextEditingController();
 TextEditingController txtPhone = TextEditingController();
+TextEditingController txtreference_SectionTitle = TextEditingController();
 
 class _ReferencePageState extends State<ReferencePage> {
   @override
@@ -25,6 +26,42 @@ class _ReferencePageState extends State<ReferencePage> {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
+          bottomNavigationBar: BottomAppBar(
+            height: h * 0.090,
+            padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
+            child: GestureDetector(
+              onTap: () {
+                RefereeName=txtrefereeName.text;
+                JobTitle=txtjobTitle.text;
+                CompanyName=txtCompanyName.text;
+                Email=txtEmail.text;
+                Phone=txtPhone.text;
+                Reference_SectionTitle=txtreference_SectionTitle.text;
+
+                // Course=txtcourse.text;
+                // Grade=txtgrade.text;
+                // School=txtschool.text;
+                Navigator.of(context).pushNamed('/editpage');
+              },
+              child: Container(
+                height: 0.120,
+                width: 0.200,
+                decoration: BoxDecoration(
+                  color: Colors.deepPurpleAccent.shade200,
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: Colors.deepPurpleAccent.shade200),
+                ),
+                child: Center(
+                    child: Text(
+                      'Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )),
+              ),
+            ),
+          ),
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
@@ -57,7 +94,7 @@ class _ReferencePageState extends State<ReferencePage> {
                     SizedBox(
                       height: h * 0.020,
                     ),
-                    section_Title_universal(universal_HintText: 'Reference'),
+                    section_Title_universal(universal_HintText: 'Reference', sectionTitle_Controlller: txtreference_SectionTitle),
                     SizedBox(
                       height: h * 0.020,
                     ),
@@ -150,7 +187,7 @@ class _ReferencePageState extends State<ReferencePage> {
                                       TextreferenceHeading: 'Company Name'),
 
                                   reference_TextformField(
-                                      reference_Controller: txtComapnyName,
+                                      reference_Controller: txtCompanyName,
                                       reference_textInputAction:
                                           TextInputAction.next, referenceHintText: 'Company Name',referenceKeyboardType: TextInputType.name),
                                   SizedBox(
@@ -170,7 +207,7 @@ class _ReferencePageState extends State<ReferencePage> {
                                       TextreferenceHeading: 'Phone'),
 
                                   reference_TextformField(
-                                      reference_Controller: txtComapnyName,
+                                      reference_Controller: txtPhone,
                                       reference_textInputAction:
                                       TextInputAction.next, referenceHintText: 'Phone',referenceKeyboardType: TextInputType.number),
                                   SizedBox(
@@ -241,3 +278,13 @@ class _ReferencePageState extends State<ReferencePage> {
     );
   }
 }
+String? RefereeName='';
+String? JobTitle='';
+String? CompanyName='';
+String? Email='';
+String? Phone='';
+String? Reference_SectionTitle='';
+
+
+
+

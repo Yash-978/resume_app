@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Utils/Example_Help_UDF.dart';
+import '../../../Utils/section_Title_container.dart';
 
 class skills extends StatefulWidget {
   const skills({super.key});
@@ -9,7 +10,8 @@ class skills extends StatefulWidget {
   @override
   State<skills> createState() => _skillsState();
 }
-
+TextEditingController txtskill_SectionTitle=TextEditingController();
+TextEditingController txtskill=TextEditingController();
 class _skillsState extends State<skills> {
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,38 @@ class _skillsState extends State<skills> {
       child: DefaultTabController(
         length: 3,
         child: Scaffold(
+          bottomNavigationBar: BottomAppBar(
+            height: h * 0.090,
+            padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
+            child: GestureDetector(
+              onTap: () {
+                skill_sectionTitle = txtskill_SectionTitle.text;
+                Skills_ = txtskill.text;
+
+                // Course=txtcourse.text;
+                // Grade=txtgrade.text;
+                // School=txtschool.text;
+                Navigator.of(context).pushNamed('/editpage');
+              },
+              child: Container(
+                height: 0.120,
+                width: 0.200,
+                decoration: BoxDecoration(
+                  color: Colors.deepPurpleAccent.shade200,
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: Colors.deepPurpleAccent.shade200),
+                ),
+                child: Center(
+                    child: Text(
+                      'Save',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )),
+              ),
+            ),
+          ),
           appBar: AppBar(
               title: Text(
                 'Skills',
@@ -54,6 +88,8 @@ class _skillsState extends State<skills> {
                   SizedBox(
                     height: h * 0.020,
                   ),
+                  section_Title_universal(universal_HintText: 'Skill', sectionTitle_Controlller: txtskill_SectionTitle),
+
                   Container(
                     height: h * 0.060,
                     width: w * 0.900,
@@ -275,3 +311,6 @@ class _skillsState extends State<skills> {
     );
   }
 }
+
+String? skill_sectionTitle='';
+String? Skills_='';
