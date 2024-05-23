@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-import '../../Utils/section_Title_container.dart';
+import '../../../Utils/section_Title_container.dart';
+
 
 
 class AwardsPage extends StatefulWidget {
@@ -103,7 +104,7 @@ class _AwardsPageState extends State<AwardsPage> {
                             onTap: () {
                               TextEditingController txtawards=TextEditingController();
                               setState(() {
-                                Interest_Controller_List.add(Awards_Controller_Model(txtawards: txtawards));
+                                Awards_Controller_List.add(Awards_Controller_Model(txtawards: txtawards));
                               });
                             },
                             child: Icon(Icons.add_circle_outline_rounded, size: 40,
@@ -131,7 +132,7 @@ class Awards_Controller_Model {
 
 }
 
-List<Awards_Controller_Model> Interest_Controller_List = [
+List<Awards_Controller_Model> Awards_Controller_List = [
 
   Awards_Controller_Model(txtawards: txtawards)];
 

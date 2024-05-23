@@ -2,7 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 
-import 'Screens/Awards/awards.dart';
+
+import 'Screens/EditPage/Awards/awards.dart';
 import 'Screens/EditPage/Education_Icon/educationIcon.dart';
 
 import 'Screens/EditPage/Experience_Icon/experience_Icon.dart';
