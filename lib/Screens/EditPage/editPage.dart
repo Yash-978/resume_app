@@ -45,14 +45,30 @@ class _Edit_PageState extends State<Edit_Page> {
                   Navigator.pushNamed(context, '/skills');
                 },
                 child: skillcategories(
-                    editicon: Icons.design_services_outlined, edittext: 'Skills'),
+                    editicon: Icons.design_services_outlined,
+                    edittext: 'Skills'),
               ),
-              skillcategories(
-                  editicon: Icons.my_location_outlined, edittext: 'Summary'),
-              skillcategories(
-                  editicon: Icons.group_add_outlined, edittext: 'Reference'),
-              skillcategories(
-                  editicon: Icons.folder_shared_outlined, edittext: 'Projects'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/summary');
+                },
+                child: skillcategories(
+                    editicon: Icons.my_location_outlined, edittext: 'Summary'),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/reference');
+                },
+                child: skillcategories(
+                    editicon: Icons.group_add_outlined, edittext: 'Reference'),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/projects');
+                },
+                child: skillcategories(
+                    editicon: Icons.folder_shared_outlined, edittext: 'Projects'),
+              ),
               skillcategories(
                   editicon: Icons.favorite_border_outlined,
                   edittext: 'Interests'),
