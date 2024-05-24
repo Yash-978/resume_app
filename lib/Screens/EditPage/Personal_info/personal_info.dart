@@ -7,6 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume_app/Screens/EditPage/Reference/reference.dart';
 
+import '../../../variable_pdf.dart';
+
 class PersonalInfo_Page extends StatefulWidget {
   const PersonalInfo_Page({super.key});
 
@@ -318,17 +320,17 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
 }
 
 
-String Name='';
-String Phone='';
-String Dob='';
-String LinkedIn='';
-String Github='';
-String Website='';
-String Address='';
-String Pincode='';
-String City='';
-String Rajya='';
-String Country='';
+// String Name='';
+// String Phone='';
+// String Dob='';
+// String LinkedIn='';
+// String Github='';
+// String Website='';
+// String Address='';
+// String Pincode='';
+// String City='';
+// String Rajya='';
+// String Country='';
 
 
 

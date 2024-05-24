@@ -36,7 +36,7 @@ class _ReferencePageState extends State<ReferencePage> {
                 JobTitle=txtjobTitle.text;
                 CompanyName=txtCompanyName.text;
                 Email=txtEmail.text;
-                Phone=txtPhone.text;
+                // Phone=txtPhone.text;
                 Reference_SectionTitle=txtreference_SectionTitle.text;
 
                 // Course=txtcourse.text;
@@ -205,10 +205,10 @@ class _ReferencePageState extends State<ReferencePage> {
                                   reference_HeadingTitle(
                                       TextreferenceHeading: 'Phone'),
 
-                                  reference_TextformField(
-                                      reference_Controller: txtPhone,
-                                      reference_textInputAction:
-                                      TextInputAction.next, referenceHintText: 'Phone',referenceKeyboardType: TextInputType.number),
+                                  // reference_TextformField(
+                                  //     reference_Controller: txtPhone,
+                                  //     reference_textInputAction:
+                                  //     TextInputAction.next, referenceHintText: 'Phone',referenceKeyboardType: TextInputType.number),
                                   SizedBox(
                                     height: h * 0.015,
                                   ),

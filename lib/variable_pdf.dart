@@ -1,4 +1,16 @@
 import 'package:flutter/material.dart';
+//personal info
+String Name='';
+String Phone='';
+String Dob='';
+String LinkedIn='';
+String Github='';
+String Website='';
+String Address='';
+String Pincode='';
+String City='';
+String Rajya='';
+String Country='';
 
 
 String? Education='';
@@ -16,7 +28,7 @@ String? RefereeName='';
 String? JobTitle='';
 String? CompanyName='';
 String? Email='';
-String? Phone='';
+// String? Phone='';
 String? Reference_SectionTitle='';
 
 String? ProjectTitle = '';

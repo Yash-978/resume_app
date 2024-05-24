@@ -1,5 +1,8 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:resume_app/Screens/EditPage/Personal_info/personal_info.dart';
+import 'package:resume_app/variable_pdf.dart';
 
 class PdfTrail extends StatefulWidget {
   const PdfTrail({super.key});
@@ -16,7 +19,7 @@ class _PdfTrailState extends State<PdfTrail> {
       child: Scaffold(
         bottomNavigationBar: BottomAppBar(
           height: 80,
-          padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
+          // padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
           child: GestureDetector(
             onTap: () {
 
@@ -78,8 +81,16 @@ class _PdfTrailState extends State<PdfTrail> {
                                       fit: BoxFit.cover),
                             ),
                           ),
-                          Text('Skill name',style: TextStyle(
-                              color: Colors.deepOrange, fontSize: 20),),
+                          Row(
+                            children: [
+                              Icon(Icons.contact_emergency,color: Colors.deepOrange,),
+
+                              Text('Contact Detail',style: TextStyle(
+                                  color: Colors.deepOrange, fontSize: 15),),
+                            ],
+                          ),
+                          Text('${Phone}',style: TextStyle(
+                              color: Colors.black, fontSize: 10),),
                           RichText(
                             text: TextSpan(
                               children: [
@@ -96,7 +107,22 @@ class _PdfTrailState extends State<PdfTrail> {
                               ],
                             ),
                           ),
+                          Row(
+                            children: [
+                              Icon(Icons.call,color: Colors.deepOrange,),
 
+                              Text('${Phone}',style: TextStyle(
+                                  color: Colors.black, fontSize: 10),),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.location_on_outlined,color: Colors.deepOrange,),
+                              Spacer(),
+                              Text('${Location}',style: TextStyle(
+                                  color: Colors.deepOrange, fontSize: 15),),
+                            ],
+                          ),
                         ],
                       ),
                     )
