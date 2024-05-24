@@ -32,17 +32,17 @@ TextEditingController txtCountry = TextEditingController();
 class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
   @override
   Widget build(BuildContext context) {
-    String? Name='';
-    String? Phone='';
-    String? Dob='';
-    String? LinkedIn='';
-    String? Github='';
-    String? Website='';
-    String? Address='';
-    String? Pincode='';
-    String? City='';
-    String? State='';
-    String? Country='';
+    // String? Name='';
+    // String? Phone='';
+    // String? Dob='';
+    // String? LinkedIn='';
+    // String? Github='';
+    // String? Website='';
+    // String? Address='';
+    // String? Pincode='';
+    // String? City='';
+    // String? State='';
+    // String? Country='';
 
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
@@ -63,7 +63,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                 Address = txtAddress.text;
                 Pincode = txtPincode.text;
                 City = txtCity.text;
-                State = txtState.text;
+                Rajya = txtState.text;
                 Country = txtCountry.text;
                 // Course=txtcourse.text;
                 // Grade=txtgrade.text;
@@ -328,17 +328,17 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
 }
 
 
-// String? Name='';
-// String? Phone='';
-// String? Dob='';
-// String? LinkedIn='';
-// String? Github='';
-// String? Website='';
-// String? Address='';
-// String? Pincode='';
-// String? City='';
-// String? State='';
-// String? Country='';
+String Name='';
+String Phone='';
+String Dob='';
+String LinkedIn='';
+String Github='';
+String Website='';
+String Address='';
+String Pincode='';
+String City='';
+String Rajya='';
+String Country='';
 
 
 

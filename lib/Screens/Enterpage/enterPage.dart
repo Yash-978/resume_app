@@ -12,10 +12,12 @@ class EntryPage extends StatefulWidget {
 class _EntryPageState extends State<EntryPage> {
   @override
   Widget build(BuildContext context) {
+    double h =MediaQuery.of(context).size.height;
+    double w =MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: BottomAppBar(
-          height: 130,
+          height: h*0.150,
 
           child: Row(
 
@@ -24,17 +26,17 @@ class _EntryPageState extends State<EntryPage> {
                   onTap: () {
                     Navigator.pushNamed(context, '/editpage');
                   },
-                  child: bottomselectionBar(
+                  child: bottomselectionBar(h,w,
                       selecticons: Icons.edit_note_rounded,
                       selecttext: 'Edit')),
 
 
-              bottomselectionBar(
+              bottomselectionBar(h,w,
                   selecticons: Icons.bookmark_border_rounded,
                   selecttext: 'Saved'),
-              bottomselectionBar(
+              bottomselectionBar(h,w,
                   selecticons: Icons.file_download_outlined, selecttext: 'Export'),
-              bottomselectionBar(
+              bottomselectionBar(h,w,
                   selecticons: Icons.share, selecttext: 'Edit'),
             ],
           ),
@@ -50,13 +52,13 @@ class _EntryPageState extends State<EntryPage> {
     );
   }
 
-  Widget bottomselectionBar({required selecticons, required selecttext}) {
+  Widget bottomselectionBar(double h,double w,{required selecticons, required selecttext}) {
     return Container(
 
       margin: EdgeInsets.all(7),
       alignment: Alignment.center,
-      height: 100,
-      width: 80,
+      height: h*0.14,
+      width: w*0.190,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.black),
