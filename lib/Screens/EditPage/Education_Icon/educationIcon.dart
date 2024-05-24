@@ -5,6 +5,7 @@ import 'package:resume_app/Screens/EditPage/Experience_Icon/experience_Icon.dart
 
 import '../../../Utils/Example_Help_UDF.dart';
 import '../../../Utils/section_Title_container.dart';
+import '../../../variable_pdf.dart';
 import 'UDF_education_icon.dart';
 
 class EducationIcon extends StatefulWidget {
@@ -287,10 +288,7 @@ class _EducationIconState extends State<EducationIcon> {
   }
 }
 
-String? Education='';
-String? Course='';
-String? School='';
-String? Grade='';
+
 
 class EducationControllerModel {
   TextEditingController? Course;

@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/pdftrail',
+        // '/pdftrail':(context)=>PdfTrail(),
         routes: AppRoutes.routes,
     );
   }

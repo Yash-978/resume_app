@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/cupertino.dart';
+import 'package:resume_app/pdf_trail.dart';
 
 
 import 'Screens/EditPage/Awards/awards.dart';
@@ -22,6 +23,7 @@ class AppRoutes
 {
   static Map<String,Widget Function (BuildContext)>routes={
     '/':(context)=>EntryPage(),
+    '/pdftrail':(context)=>PdfTrail(),
     '/editpage':(context)=>Edit_Page(),
     '/education':(context)=>EducationIcon(),
     '/experience':(context)=>ExperienceIcon(),
