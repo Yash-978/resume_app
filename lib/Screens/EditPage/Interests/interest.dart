@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../Utils/section_Title_container.dart';
+import '../../../variable_pdf.dart';
 
 class InterestPage extends StatefulWidget {
   const InterestPage({super.key});
@@ -181,5 +182,4 @@ class Interest_Controller_Model {
 List<Interest_Controller_Model> Interest_Controller_List = [
   Interest_Controller_Model(txtinterest: txtinterest)
 ];
-String? Interest='';
-String? Interest_SectionTitle='';
+

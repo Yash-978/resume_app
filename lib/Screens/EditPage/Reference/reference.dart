@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Utils/Example_Help_UDF.dart';
 import '../../../Utils/section_Title_container.dart';
+import '../../../variable_pdf.dart';
 
 class ReferencePage extends StatefulWidget {
   const ReferencePage({super.key});
@@ -276,12 +277,7 @@ class _ReferencePageState extends State<ReferencePage> {
     );
   }
 }
-String? RefereeName='';
-String? JobTitle='';
-String? CompanyName='';
-String? Email='';
-String? Phone='';
-String? Reference_SectionTitle='';
+
 
 
 

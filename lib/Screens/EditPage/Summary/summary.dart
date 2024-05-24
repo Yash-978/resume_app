@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../../Utils/Example_Help_UDF.dart';
 import '../../../Utils/section_Title_container.dart';
+import '../../../variable_pdf.dart';
 
 class SummaryPage extends StatefulWidget {
   const SummaryPage({super.key});
@@ -271,4 +272,3 @@ List summary = [
   'Passionate about making a meaningful impact in a purpose-driven company that prioritizes social responsibility and positive change.',
 ];
 int selectsummary = 0;
-String? Summary_SectionTitle='';

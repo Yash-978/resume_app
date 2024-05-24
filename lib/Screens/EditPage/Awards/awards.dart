@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 
 import '../../../Utils/section_Title_container.dart';
+import '../../../variable_pdf.dart';
 
 
 
@@ -24,9 +25,8 @@ class _AwardsPageState extends State<AwardsPage> {
         padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
         child: GestureDetector(
           onTap: () {
-            // Course=txtcourse.text;
-            // Grade=txtgrade.text;
-            // School=txtschool.text;
+            Awards = txtawards.text;
+            Awards_SectionTitle = txtawards_SectionTitle.text;
             Navigator.of(context).pushNamed('/editpage');
           },
           child: Container(
@@ -167,6 +167,5 @@ List<Awards_Controller_Model> Awards_Controller_List = [
   Awards_Controller_Model(txtawards: txtawards)];
 
 
-String? Awards='';
-String? Awards_SectionTitle='';
+
 

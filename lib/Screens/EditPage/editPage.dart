@@ -23,7 +23,8 @@ class _Edit_PageState extends State<Edit_Page> {
             child: GestureDetector(
               onTap: () {
 
-                Navigator.pushNamed(context, '/pdf');
+
+                Navigator.pushNamed(context, '/pdftrail');
               },
               child: Container(
                 height: h*0.060,

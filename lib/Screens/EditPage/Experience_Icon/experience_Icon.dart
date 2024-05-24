@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:resume_app/Screens/EditPage/Reference/reference.dart';
 import 'package:resume_app/Utils/section_Title_container.dart';
 
+import '../../../variable_pdf.dart';
+
 // import '../Education_Icon/UDF_education_icon.dart';
 TextEditingController txtcourse = TextEditingController();
 TextEditingController txtschool = TextEditingController();
@@ -379,5 +381,3 @@ class _ExperienceIconState extends State<ExperienceIcon> {
 //     return
 //   }
 // }
-String? Company='';
-String? Jobtitle='';

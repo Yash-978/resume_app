@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Utils/section_Title_container.dart';
+import '../../../variable_pdf.dart';
 
 class ProjectPage extends StatefulWidget {
   const ProjectPage({super.key});
@@ -239,6 +240,4 @@ class _ProjectPageState extends State<ProjectPage> {
   }
 }
 
-String? ProjectTitle = '';
-String? ProjectDetail = '';
-String? Project_SectionTitle = '';
+

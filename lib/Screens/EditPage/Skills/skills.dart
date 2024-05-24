@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../Utils/Example_Help_UDF.dart';
 import '../../../Utils/section_Title_container.dart';
+import '../../../variable_pdf.dart';
 
 class skills extends StatefulWidget {
   const skills({super.key});
@@ -312,5 +313,3 @@ class _skillsState extends State<skills> {
   }
 }
 
-String? skill_sectionTitle='';
-String? Skills_='';

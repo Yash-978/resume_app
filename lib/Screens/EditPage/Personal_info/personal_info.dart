@@ -32,17 +32,7 @@ TextEditingController txtCountry = TextEditingController();
 class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
   @override
   Widget build(BuildContext context) {
-    // String? Name='';
-    // String? Phone='';
-    // String? Dob='';
-    // String? LinkedIn='';
-    // String? Github='';
-    // String? Website='';
-    // String? Address='';
-    // String? Pincode='';
-    // String? City='';
-    // String? State='';
-    // String? Country='';
+
 
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
