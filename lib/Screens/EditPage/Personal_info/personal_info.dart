@@ -43,6 +43,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
     String? City='';
     String? State='';
     String? Country='';
+
     double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return DefaultTabController(
@@ -55,7 +56,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
               onTap: () {
                 Name = txtname.text;
                 Phone = txtphone.text;
-                Dob = txtphone.text;
+                Dob = txtdob.text;
                 LinkedIn = txtlinkedIn.text;
                 Github = txtGithub.text;
                 Website = txtWebsite.text;

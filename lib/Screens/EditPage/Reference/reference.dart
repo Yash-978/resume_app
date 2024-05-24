@@ -123,7 +123,7 @@ class _ReferencePageState extends State<ReferencePage> {
                       ),
                     ),
                     Container(
-                      height: h * 0.700,
+                      height: h * 0.800,
                       width: w * 0.900,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
@@ -148,9 +148,7 @@ class _ReferencePageState extends State<ReferencePage> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
-                                  width: w * 0.540,
-                                ),
+                               Spacer(),
                                 Icon(
                                   Icons.highlight_remove_rounded,
                                   color: Colors.deepPurpleAccent.shade200,

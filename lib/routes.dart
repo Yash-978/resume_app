@@ -32,7 +32,7 @@ class AppRoutes
     '/interest':(context)=>InterestPage(),
     '/awards':(context)=>AwardsPage(),
     '/personal_info':(context)=>PersonalInfo_Page(),
-    // '/pdf':(context)=>PdfPage(),
+    '/pdf':(context)=>PdfPage(),
 
   };
 }
