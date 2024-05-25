@@ -13,7 +13,7 @@ class ProjectPage extends StatefulWidget {
 
 TextEditingController txtprojectTitle = TextEditingController();
 TextEditingController txtprojectDetail = TextEditingController();
-TextEditingController txtproject_SectionTitle = TextEditingController();
+TextEditingController txtproject_ST = TextEditingController();
 
 class _ProjectPageState extends State<ProjectPage> {
   @override
@@ -28,12 +28,10 @@ class _ProjectPageState extends State<ProjectPage> {
             padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
             child: GestureDetector(
               onTap: () {
-                ProjectTitle = txtprojectTitle.text;
-                ProjectDetail = txtprojectDetail.text;
-                Project_SectionTitle = txtproject_SectionTitle.text;
-                // Course=txtcourse.text;
-                // Grade=txtgrade.text;
-                // School=txtschool.text;
+                Project_Title = txtprojectTitle.text;
+                Project_Detail = txtprojectDetail.text;
+                Project_ST = txtproject_ST.text;
+
                 Navigator.of(context).pushNamed('/editpage');
               },
               child: Container(
@@ -96,7 +94,7 @@ class _ProjectPageState extends State<ProjectPage> {
                   children: [
                     section_Title_universal(
                         universal_HintText: 'Project',
-                        sectionTitle_Controlller: txtproject_SectionTitle),
+                        sectionTitle_Controlller: txtproject_ST),
                     SizedBox(
                       height: h * 0.020,
                     ),

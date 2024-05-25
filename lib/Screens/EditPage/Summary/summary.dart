@@ -13,7 +13,7 @@ class SummaryPage extends StatefulWidget {
   State<SummaryPage> createState() => _SummaryPageState();
 }
 
-TextEditingController txtsummary_SectionTitle = TextEditingController();
+TextEditingController txtsummary_ST = TextEditingController();
 TextEditingController txtsummary = TextEditingController();
 
 class _SummaryPageState extends State<SummaryPage> {
@@ -29,6 +29,8 @@ class _SummaryPageState extends State<SummaryPage> {
           padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
           child: GestureDetector(
             onTap: () {
+              Summary_ST = txtsummary_ST.text;
+              Summary_ = txtsummary.text;
               // Course=txtcourse.text;
               // Grade=txtgrade.text;
               // School=txtschool.text;
@@ -92,7 +94,7 @@ class _SummaryPageState extends State<SummaryPage> {
                   ),
                   section_Title_universal(
                       universal_HintText: 'Summary',
-                      sectionTitle_Controlller: txtsummary_SectionTitle),
+                      sectionTitle_Controlller: txtsummary_ST),
 
                   // Container(
                   //   height: h * 0.110,

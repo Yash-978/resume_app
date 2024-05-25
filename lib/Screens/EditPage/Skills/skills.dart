@@ -11,7 +11,7 @@ class skills extends StatefulWidget {
   @override
   State<skills> createState() => _skillsState();
 }
-TextEditingController txtskill_SectionTitle=TextEditingController();
+TextEditingController txtskill_ST=TextEditingController();
 TextEditingController txtskill=TextEditingController();
 class _skillsState extends State<skills> {
   @override
@@ -27,8 +27,8 @@ class _skillsState extends State<skills> {
             padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
             child: GestureDetector(
               onTap: () {
-                skill_sectionTitle = txtskill_SectionTitle.text;
-                Skills_ = txtskill.text;
+                Skill_ST = txtskill_ST.text;
+                Skill_s = txtskill.text;
 
                 // Course=txtcourse.text;
                 // Grade=txtgrade.text;
@@ -89,7 +89,7 @@ class _skillsState extends State<skills> {
                   SizedBox(
                     height: h * 0.020,
                   ),
-                  section_Title_universal(universal_HintText: 'Skill', sectionTitle_Controlller: txtskill_SectionTitle),
+                  section_Title_universal(universal_HintText: 'Skill', sectionTitle_Controlller: txtskill_ST),
 
                   Container(
                     height: h * 0.060,

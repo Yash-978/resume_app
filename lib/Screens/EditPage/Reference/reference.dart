@@ -12,12 +12,12 @@ class ReferencePage extends StatefulWidget {
   State<ReferencePage> createState() => _ReferencePageState();
 }
 
-TextEditingController txtrefereeName = TextEditingController();
-TextEditingController txtjobTitle = TextEditingController();
-TextEditingController txtCompanyName = TextEditingController();
-TextEditingController txtEmail = TextEditingController();
-TextEditingController txtPhone = TextEditingController();
-TextEditingController txtreference_SectionTitle = TextEditingController();
+TextEditingController txtRefer_Name = TextEditingController();
+TextEditingController txtRefer_jobTitle = TextEditingController();
+TextEditingController txtRefer_CompanyName = TextEditingController();
+TextEditingController txtRefer_Email = TextEditingController();
+TextEditingController txtRefer_Phone = TextEditingController();
+TextEditingController txtRefer_ST = TextEditingController();
 
 class _ReferencePageState extends State<ReferencePage> {
   @override
@@ -32,16 +32,13 @@ class _ReferencePageState extends State<ReferencePage> {
             padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
             child: GestureDetector(
               onTap: () {
-                RefereeName=txtrefereeName.text;
-                JobTitle=txtjobTitle.text;
-                CompanyName=txtCompanyName.text;
-                Email=txtEmail.text;
-                // Phone=txtPhone.text;
-                Reference_SectionTitle=txtreference_SectionTitle.text;
+                Refer_Name = txtRefer_Name.text;
+                Refer_jobTitle = txtRefer_jobTitle.text;
+                Refer_CompanyName = txtRefer_CompanyName.text;
+                Refer_Email = txtRefer_Email.text;
+                Refer_Phone = txtRefer_Phone.text;
+                Refer_ST = txtRefer_ST.text;
 
-                // Course=txtcourse.text;
-                // Grade=txtgrade.text;
-                // School=txtschool.text;
                 Navigator.of(context).pushNamed('/editpage');
               },
               child: Container(
@@ -54,12 +51,12 @@ class _ReferencePageState extends State<ReferencePage> {
                 ),
                 child: Center(
                     child: Text(
-                      'Save',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    )),
+                  'Save',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                )),
               ),
             ),
           ),
@@ -95,7 +92,9 @@ class _ReferencePageState extends State<ReferencePage> {
                     SizedBox(
                       height: h * 0.020,
                     ),
-                    section_Title_universal(universal_HintText: 'Reference', sectionTitle_Controlller: txtreference_SectionTitle),
+                    section_Title_universal(
+                        universal_HintText: 'Reference',
+                        sectionTitle_Controlller: txtRefer_ST),
                     SizedBox(
                       height: h * 0.020,
                     ),
@@ -149,7 +148,7 @@ class _ReferencePageState extends State<ReferencePage> {
                                     ),
                                   ),
                                 ),
-                               Spacer(),
+                                Spacer(),
                                 Icon(
                                   Icons.highlight_remove_rounded,
                                   color: Colors.deepPurpleAccent.shade200,
@@ -167,18 +166,24 @@ class _ReferencePageState extends State<ReferencePage> {
                                   reference_HeadingTitle(
                                       TextreferenceHeading: "Referee's Name"),
                                   reference_TextformField(
-                                      reference_Controller: txtrefereeName,
+                                      reference_Controller: txtRefer_Name,
                                       reference_textInputAction:
-                                          TextInputAction.next, referenceHintText: "Referee's Name", referenceKeyboardType: TextInputType.name),
+                                          TextInputAction.next,
+                                      referenceHintText: "Referee's Name",
+                                      referenceKeyboardType:
+                                          TextInputType.name),
                                   SizedBox(
                                     height: h * 0.015,
                                   ),
                                   reference_HeadingTitle(
                                       TextreferenceHeading: 'Job Title'),
                                   reference_TextformField(
-                                      reference_Controller: txtjobTitle,
+                                      reference_Controller: txtRefer_jobTitle,
                                       reference_textInputAction:
-                                          TextInputAction.next, referenceHintText: 'Job Title',referenceKeyboardType: TextInputType.name),
+                                          TextInputAction.next,
+                                      referenceHintText: 'Job Title',
+                                      referenceKeyboardType:
+                                          TextInputType.name),
                                   SizedBox(
                                     height: h * 0.015,
                                   ),
@@ -186,29 +191,36 @@ class _ReferencePageState extends State<ReferencePage> {
                                       TextreferenceHeading: 'Company Name'),
 
                                   reference_TextformField(
-                                      reference_Controller: txtCompanyName,
+                                      reference_Controller: txtRefer_CompanyName,
                                       reference_textInputAction:
-                                          TextInputAction.next, referenceHintText: 'Company Name',referenceKeyboardType: TextInputType.name),
+                                          TextInputAction.next,
+                                      referenceHintText: 'Company Name',
+                                      referenceKeyboardType:
+                                          TextInputType.name),
                                   SizedBox(
                                     height: h * 0.015,
                                   ),
                                   reference_HeadingTitle(
-                                      TextreferenceHeading: 'Email',),
+                                    TextreferenceHeading: 'Email',
+                                  ),
 
                                   reference_TextformField(
-                                      reference_Controller: txtEmail,
+                                      reference_Controller: txtRefer_Email,
                                       reference_textInputAction:
-                                      TextInputAction.next, referenceHintText: 'Email',referenceKeyboardType: TextInputType.name),
+                                          TextInputAction.next,
+                                      referenceHintText: 'Email',
+                                      referenceKeyboardType:
+                                          TextInputType.name),
                                   SizedBox(
                                     height: h * 0.015,
                                   ),
                                   reference_HeadingTitle(
                                       TextreferenceHeading: 'Phone'),
 
-                                  // reference_TextformField(
-                                  //     reference_Controller: txtPhone,
-                                  //     reference_textInputAction:
-                                  //     TextInputAction.next, referenceHintText: 'Phone',referenceKeyboardType: TextInputType.number),
+                                  reference_TextformField(
+                                      reference_Controller: txtRefer_Phone,
+                                      reference_textInputAction:
+                                      TextInputAction.next, referenceHintText: 'Phone',referenceKeyboardType: TextInputType.number),
                                   SizedBox(
                                     height: h * 0.015,
                                   ),
@@ -230,7 +242,7 @@ class _ReferencePageState extends State<ReferencePage> {
                   Edit_Help_info(h * 0.350, w * 0.850,
                       Education_Help_heading: '',
                       Education_Help_info:
-                      "The 'Education' section on a resume outlines your academic background, including degrees, institution, graduation dates, and relevant academic achievement. It's essential as it demonstrates your qualifications, knowledge,and commitment to learning, providing employers with a foundation to access your potential for the roe and yoyur ability to meet specific eduacational requirements."),
+                          "The 'Education' section on a resume outlines your academic background, including degrees, institution, graduation dates, and relevant academic achievement. It's essential as it demonstrates your qualifications, knowledge,and commitment to learning, providing employers with a foundation to access your potential for the roe and yoyur ability to meet specific eduacational requirements."),
                 ],
               )
             ],
@@ -250,15 +262,16 @@ class _ReferencePageState extends State<ReferencePage> {
   }
 
   SizedBox reference_TextformField(
-      {required reference_Controller, required reference_textInputAction,required referenceHintText,required referenceKeyboardType}) {
+      {required reference_Controller,
+      required reference_textInputAction,
+      required referenceHintText,
+      required referenceKeyboardType}) {
     return SizedBox(
       child: TextFormField(
         controller: reference_Controller,
         textInputAction: reference_textInputAction,
-        keyboardType:  referenceKeyboardType,
-        
+        keyboardType: referenceKeyboardType,
         decoration: InputDecoration(
-
           hintText: referenceHintText,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
@@ -277,8 +290,3 @@ class _ReferencePageState extends State<ReferencePage> {
     );
   }
 }
-
-
-
-
-

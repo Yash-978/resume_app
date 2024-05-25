@@ -16,10 +16,11 @@ class EducationIcon extends StatefulWidget {
 }
 
 class _EducationIconState extends State<EducationIcon> {
-  TextEditingController txtcourse = TextEditingController();
-  TextEditingController txtschool = TextEditingController();
-  TextEditingController txtgrade = TextEditingController();
-  TextEditingController Education_txtSectionTitle = TextEditingController();
+  TextEditingController txtEdu_course = TextEditingController();
+  TextEditingController txtEdu_school = TextEditingController();
+  TextEditingController txtEdu_grade = TextEditingController();
+  TextEditingController txtEdu_ST = TextEditingController();
+
   // TextEditingController txtcourse = TextEditingController();
 // TextEditingController txtschool = TextEditingController();
 // TextEditingController txtgrade = TextEditingController();
@@ -37,9 +38,10 @@ class _EducationIconState extends State<EducationIcon> {
             padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
             child: GestureDetector(
               onTap: () {
-                Course=txtcourse.text;
-                Grade=txtgrade.text;
-                School=txtschool.text;
+                Edu_Course = txtEdu_course.text;
+                Edu_Grade = txtEdu_grade.text;
+                Edu_School = txtEdu_school.text;
+                Edu_ST = txtEdu_school.text;
                 Navigator.of(context).pushNamed('/editpage');
               },
               child: Container(
@@ -96,26 +98,27 @@ class _EducationIconState extends State<EducationIcon> {
                   children: [
                     section_Title_universal(
                         universal_HintText: 'Education',
-                        sectionTitle_Controlller: Education_txtSectionTitle),
+                        sectionTitle_Controlller: txtEdu_ST),
                     SizedBox(
                       height: 20,
                     ),
                     GestureDetector(
                       onTap: () {
-                        TextEditingController txtcourse =
-                            TextEditingController();
-                        TextEditingController txtgrade =
-                            TextEditingController();
-                        TextEditingController txtschool =
-                            TextEditingController();
-                        setState(() {
-                          Education_Controller_List.add(
-                            EducationControllerModel(
-                                Course: txtcourse,
-                                Grade: txtgrade,
-                                School: txtschool),
-                          );
-                        });
+                        // TextEditingController Edu_course =
+                        //     TextEditingController();
+                        // TextEditingController Edu_grade =
+                        //     TextEditingController();
+                        // TextEditingController Edu_school =
+                        //     TextEditingController();
+                        // setState(() {
+                        //   Education_Controller_List.add(
+                        //     EducationControllerModel(
+                        //         Edu_Course: Edu_course,
+                        //         Edu_Grade: Edu_grade,
+                        //         Edu_School: Edu_school
+                        //     ),
+                        //   );
+                        // });
                       },
                       child: Container(
                         height: 50,
@@ -145,7 +148,8 @@ class _EducationIconState extends State<EducationIcon> {
                     SizedBox(
                       height: 20,
                     ),
-                    ...List.generate(Education_Controller_List.length, (index) => Container(
+                    // ...List.generate(Education_Controller_List.length, (index) =>
+                    Container(
                       height: 410,
                       width: 350,
                       decoration: BoxDecoration(
@@ -156,7 +160,7 @@ class _EducationIconState extends State<EducationIcon> {
                         child: Column(
                           children: [
                             buildColumn_Edit(
-                                editController: txtcourse,
+                                editController: txtEdu_course,
                                 editHintText: 'Course/Degree',
                                 editCourseName: 'Course/Degree',
                                 edit_textinput_action: TextInputAction.next),
@@ -164,7 +168,7 @@ class _EducationIconState extends State<EducationIcon> {
                               height: 15,
                             ),
                             buildColumn_Edit(
-                                editController: txtschool,
+                                editController: txtEdu_school,
                                 editHintText: 'School/University',
                                 editCourseName: 'School/University',
                                 edit_textinput_action: TextInputAction.next),
@@ -172,14 +176,15 @@ class _EducationIconState extends State<EducationIcon> {
                               height: 15,
                             ),
                             buildColumn_Edit(
-                                editController: txtgrade,
+                                editController: txtEdu_grade,
                                 editHintText: 'Grade/Score',
                                 editCourseName: 'Grade/Score',
                                 edit_textinput_action: TextInputAction.next),
                           ],
                         ),
                       ),
-                    ),)
+                    ),
+                    // ),
                   ],
                 ),
               ),
@@ -252,8 +257,6 @@ class _EducationIconState extends State<EducationIcon> {
     );
   }
 
-
-
   Column buildColumn_Edit(
       {required editController,
       required editHintText,
@@ -290,21 +293,19 @@ class _EducationIconState extends State<EducationIcon> {
   }
 }
 
-
-
-class EducationControllerModel {
-  TextEditingController? Course;
-  TextEditingController? School;
-  TextEditingController? Grade;
-
-  EducationControllerModel({this.Grade, this.
-  School, this.Course
-  });
-}
-
-List<EducationControllerModel> Education_Controller_List = [
-  EducationControllerModel(Course: txtcourse,Grade: txtgrade,School: txtschool,)
-];
+// class EducationControllerModel {
+//   TextEditingController? Edu_Course;
+//   TextEditingController? Edu_School;
+//   TextEditingController? Edu_Grade;
+//
+//   EducationControllerModel({this.Edu_Grade, this.
+//   Edu_School, this.Edu_Course
+//   });
+// }
+//
+// List<EducationControllerModel> Education_Controller_List = [
+//   EducationControllerModel(Edu_Course: txtcourse,Edu_Grade: txtgrade,Edu_School: txtschool,)
+// ];
 
 //
 //   Column UDF_Education_Icon() {

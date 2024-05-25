@@ -18,18 +18,18 @@ class PersonalInfo_Page extends StatefulWidget {
 
 ImagePicker imagePicker = ImagePicker();
 File? fileimage;
-TextEditingController txtname = TextEditingController();
-TextEditingController txtphone = TextEditingController();
-TextEditingController txtemail = TextEditingController();
-TextEditingController txtdob = TextEditingController();
-TextEditingController txtlinkedIn = TextEditingController();
-TextEditingController txtGithub = TextEditingController();
-TextEditingController txtWebsite = TextEditingController();
-TextEditingController txtAddress = TextEditingController();
-TextEditingController txtPincode = TextEditingController();
-TextEditingController txtCity = TextEditingController();
-TextEditingController txtState = TextEditingController();
-TextEditingController txtCountry = TextEditingController();
+TextEditingController txtPerson_name = TextEditingController();
+TextEditingController txtPerson_phone = TextEditingController();
+TextEditingController txtPerson_email = TextEditingController();
+TextEditingController txtPerson_dob = TextEditingController();
+TextEditingController txtPerson_linkedIn = TextEditingController();
+TextEditingController txtPerson_Github = TextEditingController();
+TextEditingController txtPerson_Website = TextEditingController();
+TextEditingController txtPerson_Address = TextEditingController();
+TextEditingController txtPerson_Pincode = TextEditingController();
+TextEditingController txtPerson_City = TextEditingController();
+TextEditingController txtPerson_State = TextEditingController();
+TextEditingController txtPerson_Country = TextEditingController();
 
 class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
   @override
@@ -46,18 +46,22 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
             padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
             child: GestureDetector(
               onTap: () {
-                Name = txtname.text;
-                Phone = txtphone.text;
-                Dob = txtdob.text;
-                LinkedIn = txtlinkedIn.text;
-                Github = txtGithub.text;
-                Website = txtWebsite.text;
-                Address = txtAddress.text;
-                Pincode = txtPincode.text;
-                City = txtCity.text;
-                Rajya = txtState.text;
-                Country = txtCountry.text;
-                // Course=txtcourse.text;
+                Person_Name = txtPerson_name.text;
+                Person_Phone = txtPerson_phone.text;
+                Person_Dob = txtPerson_dob.text;
+                Person_Email = txtPerson_email.text;
+                Person_LinkedIn = txtPerson_linkedIn.text;
+                Person_Github = txtPerson_Github.text;
+                Person_Website = txtPerson_Website.text;
+                Person_Address = txtPerson_Address.text;
+                Person_Pincode = txtPerson_Pincode.text;
+                Person_City = txtPerson_City.text;
+                Person_Rajya = txtPerson_State.text;
+                Person_Country = txtPerson_Country.text;
+
+
+
+                // Course=txtPerson_course.text;
                 // Grade=txtgrade.text;
                 // School=txtschool.text;
                 Navigator.of(context).pushNamed('/editpage');
@@ -167,7 +171,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'Name',
-                    personalInfo_Controlller: txtname,
+                    personalInfo_Controlller: txtPerson_name,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -177,7 +181,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'Phone',
-                    personalInfo_Controlller: txtphone,
+                    personalInfo_Controlller: txtPerson_phone,
                     personalInfo_keyboardType: TextInputType.number,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -188,7 +192,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'Email',
-                    personalInfo_Controlller: txtemail,
+                    personalInfo_Controlller: txtPerson_email,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -198,7 +202,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'LinkedIn',
-                    personalInfo_Controlller: txtlinkedIn,
+                    personalInfo_Controlller: txtPerson_linkedIn,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -208,7 +212,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'Github',
-                    personalInfo_Controlller: txtGithub,
+                    personalInfo_Controlller: txtPerson_Github,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -218,7 +222,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'Website',
-                    personalInfo_Controlller: txtWebsite,
+                    personalInfo_Controlller: txtPerson_Website,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -228,7 +232,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'Address',
-                    personalInfo_Controlller: txtAddress,
+                    personalInfo_Controlller: txtPerson_Address,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -238,7 +242,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'City',
-                    personalInfo_Controlller: txtCity,
+                    personalInfo_Controlller: txtPerson_City,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -248,7 +252,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'State',
-                    personalInfo_Controlller: txtState,
+                    personalInfo_Controlller: txtPerson_State,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.next,
                   ),
@@ -258,7 +262,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
                   Personal_Info_TextFormFeild(
                     w,
                     personalInfo_HintText: 'Country',
-                    personalInfo_Controlller: txtCountry,
+                    personalInfo_Controlller: txtPerson_Country,
                     personalInfo_keyboardType: TextInputType.name,
                     personalInfo_TextInputAction: TextInputAction.done,
                   ),

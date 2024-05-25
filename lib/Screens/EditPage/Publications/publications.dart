@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
 
-
 import '../../../Utils/section_Title_container.dart';
 import '../../../variable_pdf.dart';
-
-
-
-class AwardsPage extends StatefulWidget {
-  const AwardsPage({super.key});
+class PublicationPage extends StatefulWidget {
+  const PublicationPage({super.key});
 
   @override
-  State<AwardsPage> createState() => _AwardsPageState();
+  State<PublicationPage> createState() => _PublicationPageState();
 }
-TextEditingController txtawards=TextEditingController();
-TextEditingController txtawards_ST=TextEditingController();
-class _AwardsPageState extends State<AwardsPage> {
+TextEditingController txtPub_ST = TextEditingController();
+TextEditingController txtPub_Title = TextEditingController();
+TextEditingController txtPub_detail = TextEditingController();
+class _PublicationPageState extends State<PublicationPage> {
   @override
   Widget build(BuildContext context) {
-    double h=MediaQuery.of(context).size.height;
-    double w=MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
+
     return DefaultTabController(length: 3, child: Scaffold(
       bottomNavigationBar: BottomAppBar(
         height: h * 0.090,
         padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
         child: GestureDetector(
           onTap: () {
-            Awards = txtawards.text;
-            Awards_SectionTitle = txtawards_ST.text;
+            Pub_ST=txtPub_ST.text;
+            Pub_title=txtPub_detail.text;
+            Pub_Detail=txtPub_detail.text;
+
             Navigator.of(context).pushNamed('/editpage');
           },
           child: Container(
@@ -49,10 +49,14 @@ class _AwardsPageState extends State<AwardsPage> {
         ),
       ),
       appBar: AppBar(
+        title: Text(
+          'Activities',
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+        ),
         bottom: TabBar(tabs: [
           Tab(
             child: Text(
-              'Summary',
+              'Activities',
               style: TextStyle(color: Colors.black, fontSize: 20),
             ),
           ),
@@ -78,12 +82,15 @@ class _AwardsPageState extends State<AwardsPage> {
                 SizedBox(
                   height: h * 0.020,
                 ),
-                section_Title_universal(universal_HintText: 'Interest', sectionTitle_Controlller: txtawards_ST),
+                section_Title_universal(
+                    universal_HintText: 'Publication',
+                    sectionTitle_Controlller: txtPub_ST),
                 SizedBox(
                   height: h * 0.020,
                 ),
-                // ...List.generate
-                //   (Interest_Controller_List.length, (index) =>)
+                // ...List.generate(
+                //   Interest_Controller_List.length,
+                //       (index) =>
                 Column(
                   children: [
                     Container(
@@ -106,14 +113,12 @@ class _AwardsPageState extends State<AwardsPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-
-
                           SizedBox(
                             width: w * 0.750,
                             child: TextFormField(
                               // maxLines: ,
                               decoration: InputDecoration(
-                                  hintText: 'Interest', //expHint_Text
+                                  hintText: 'Publication', //expHint_Text
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(
@@ -132,20 +137,29 @@ class _AwardsPageState extends State<AwardsPage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              TextEditingController txtawards=TextEditingController();
-                              setState(() {
-                                Awards_Controller_List.add(Awards_Controller_Model(txtawards: txtawards));
-                              });
+                              // TextEditingController txtinterest =
+                              //     TextEditingController();
+                              // setState(() {
+                              // Interest_Controller_List.add(
+                              //     Interest_Controller_Model(
+                              //         txtinterest: txtinterest));
+                              // });
                             },
-                            child: Icon(Icons.add_circle_outline_rounded, size: 40,
-                              color: Colors.deepPurpleAccent.shade200,),
+                            child: Icon(
+                              Icons.add_circle_outline_rounded,
+                              size: 40,
+                              color: Colors.deepPurpleAccent.shade200,
+                            ),
                           )
                         ],
                       ),
                     ),
-                    SizedBox(height: h*0.020,),
+                    SizedBox(
+                      height: h * 0.020,
+                    ),
                   ],
                 ),
+                // ),
               ],
             ),
           )
@@ -154,18 +168,3 @@ class _AwardsPageState extends State<AwardsPage> {
     ));
   }
 }
-
-class Awards_Controller_Model {
-  TextEditingController? txtawards;
-
-  Awards_Controller_Model({this.txtawards});
-
-}
-
-List<Awards_Controller_Model> Awards_Controller_List = [
-
-  Awards_Controller_Model(txtawards: txtawards)];
-
-
-
-

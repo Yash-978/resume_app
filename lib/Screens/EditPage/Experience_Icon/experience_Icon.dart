@@ -7,13 +7,14 @@ import 'package:resume_app/Utils/section_Title_container.dart';
 import '../../../variable_pdf.dart';
 
 // import '../Education_Icon/UDF_education_icon.dart';
-TextEditingController txtcourse = TextEditingController();
-TextEditingController txtschool = TextEditingController();
-TextEditingController txtgrade = TextEditingController();
-TextEditingController txtexperience = TextEditingController();
-TextEditingController txtexperience_SectionTitle = TextEditingController();
-TextEditingController txtcompany=TextEditingController();
-TextEditingController exptxtjobTitle=TextEditingController();
+// TextEditingController txtExp_course = TextEditingController();
+// TextEditingController txtExp_school = TextEditingController();
+// TextEditingController txtExp_grade = TextEditingController();
+// TextEditingController txtexperience = TextEditingController();
+// TextEditingController txtExp_experience = TextEditingController();
+TextEditingController txtExp_ST = TextEditingController();
+TextEditingController txtExp_company=TextEditingController();
+TextEditingController txtExp_jobTitle=TextEditingController();
 class ExperienceIcon extends StatefulWidget {
   const ExperienceIcon({super.key});
 
@@ -34,8 +35,9 @@ class _ExperienceIconState extends State<ExperienceIcon> {
           padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
           child: GestureDetector(
             onTap: () {
-              Company=txtcompany.text;
-              Jobtitle=exptxtjobTitle.text;
+              Exp_ST=txtExp_ST.text;
+              Exp_Company=txtExp_company.text;
+              Exp_Jobtitle=txtExp_jobTitle.text;
 
               Navigator.of(context).pushNamed('/editpage');
             },
@@ -91,7 +93,7 @@ class _ExperienceIconState extends State<ExperienceIcon> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  section_Title_universal(universal_HintText: 'Experience', sectionTitle_Controlller:txtexperience_SectionTitle ),
+                  section_Title_universal(universal_HintText: 'Experience', sectionTitle_Controlller:txtExp_ST ),
 
 
                   SizedBox(
@@ -179,7 +181,7 @@ class _ExperienceIconState extends State<ExperienceIcon> {
                         Exp_textFormField(
                           w * 0.880,
                           expHint_Text: 'Company Name',
-                          expController: txtcompany,
+                          expController: txtExp_company,
                         ),
                         SizedBox(
                           height: h * 0.020,
@@ -191,7 +193,7 @@ class _ExperienceIconState extends State<ExperienceIcon> {
                         Exp_textFormField(
                           w * 0.880,
                           expHint_Text: 'Job Title',
-                          expController: txtjobTitle,
+                          expController: txtExp_jobTitle,
                         ),
                         SizedBox(
                           height: h * 0.020,
