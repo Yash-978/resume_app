@@ -306,6 +306,9 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
     );
   }
 
+
+
+
   Padding Personal_Info_Text({required personalInfo_Title}) {
     return Padding(
       padding: const EdgeInsets.only(left: 16),
