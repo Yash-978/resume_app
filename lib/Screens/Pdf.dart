@@ -50,6 +50,7 @@ async{
             decoration: pw.BoxDecoration(
               borderRadius: pw.BorderRadius.circular(15),
               color: PdfColor.fromHex('F1F1F1'),
+              // color: PdfColors.grey,
             ),
             child: pw.Column(
               children: [
