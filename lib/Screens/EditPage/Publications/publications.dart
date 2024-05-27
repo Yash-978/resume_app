@@ -24,7 +24,7 @@ class _PublicationPageState extends State<PublicationPage> {
         child: GestureDetector(
           onTap: () {
             Pub_ST=txtPub_ST.text;
-            Pub_title=txtPub_detail.text;
+            Pub_title=txtPub_Title.text;
             Pub_Detail=txtPub_detail.text;
 
             Navigator.of(context).pushNamed('/editpage');
@@ -50,26 +50,26 @@ class _PublicationPageState extends State<PublicationPage> {
       ),
       appBar: AppBar(
         title: Text(
-          'Activities',
+          'Publications',
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
         ),
         bottom: TabBar(tabs: [
           Tab(
             child: Text(
-              'Activities',
-              style: TextStyle(color: Colors.black, fontSize: 20),
+              'Publications',
+              style: TextStyle(color: Colors.black, fontSize: 17),
             ),
           ),
           Tab(
             child: Text(
               'Example',
-              style: TextStyle(color: Colors.black, fontSize: 20),
+              style: TextStyle(color: Colors.black, fontSize: 17),
             ),
           ),
           Tab(
             child: Text(
               'Help',
-              style: TextStyle(color: Colors.black, fontSize: 20),
+              style: TextStyle(color: Colors.black, fontSize: 17),
             ),
           ),
         ]),

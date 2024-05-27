@@ -90,6 +90,9 @@ class _skillsState extends State<skills> {
                     height: h * 0.020,
                   ),
                   section_Title_universal(universal_HintText: 'Skill', sectionTitle_Controlller: txtskill_ST),
+                  SizedBox(
+                    height: h * 0.020,
+                  ),
 
                   Container(
                     height: h * 0.060,

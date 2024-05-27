@@ -61,6 +61,13 @@ class _ReferencePageState extends State<ReferencePage> {
             ),
           ),
           appBar: AppBar(
+
+
+
+            title: Text(
+              'Reference',
+              style: TextStyle(),
+            ),
             bottom: TabBar(
               tabs: [
                 Tab(
@@ -122,6 +129,9 @@ class _ReferencePageState extends State<ReferencePage> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: h * 0.020,
+                    ),
                     Container(
                       height: h * 0.800,
                       width: w * 0.900,
@@ -132,6 +142,7 @@ class _ReferencePageState extends State<ReferencePage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
+
                             Row(
                               children: [
                                 Padding(
@@ -139,7 +150,7 @@ class _ReferencePageState extends State<ReferencePage> {
                                   child: Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
-                                      'Reference 1',
+                                      'Reference :-',
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w600,

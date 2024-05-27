@@ -70,19 +70,19 @@ class _ExperienceIconState extends State<ExperienceIcon> {
               Tab(
                 child: Text(
                   'Experience',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
               ),
               Tab(
                 child: Text(
                   'Example',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
               ),
               Tab(
                 child: Text(
                   'Help',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
               ),
             ],

@@ -85,7 +85,7 @@ class _ActivityPageState extends State<ActivityPage> {
                     height: h * 0.020,
                   ),
                   section_Title_universal(
-                      universal_HintText: 'Interest',
+                      universal_HintText: 'Activity',
                       sectionTitle_Controlller: txtAct_ST),
                   SizedBox(
                     height: h * 0.020,
@@ -120,7 +120,7 @@ class _ActivityPageState extends State<ActivityPage> {
                               child: TextFormField(
                                 // maxLines: ,
                                 decoration: InputDecoration(
-                                    hintText: 'Interest', //expHint_Text
+                                    hintText: 'Activity', //expHint_Text
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(15),
                                       borderSide: BorderSide(

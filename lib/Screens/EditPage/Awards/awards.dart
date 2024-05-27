@@ -49,10 +49,14 @@ class _AwardsPageState extends State<AwardsPage> {
         ),
       ),
       appBar: AppBar(
+        title: Text(
+          'Awards',
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+        ),
         bottom: TabBar(tabs: [
           Tab(
             child: Text(
-              'Summary',
+              'Awards',
               style: TextStyle(color: Colors.black, fontSize: 20),
             ),
           ),
@@ -78,7 +82,7 @@ class _AwardsPageState extends State<AwardsPage> {
                 SizedBox(
                   height: h * 0.020,
                 ),
-                section_Title_universal(universal_HintText: 'Interest', sectionTitle_Controlller: txtawards_ST),
+                section_Title_universal(universal_HintText: 'Awards', sectionTitle_Controlller: txtawards_ST),
                 SizedBox(
                   height: h * 0.020,
                 ),
@@ -113,7 +117,7 @@ class _AwardsPageState extends State<AwardsPage> {
                             child: TextFormField(
                               // maxLines: ,
                               decoration: InputDecoration(
-                                  hintText: 'Interest', //expHint_Text
+                                  hintText: 'Awards', //expHint_Text
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide(

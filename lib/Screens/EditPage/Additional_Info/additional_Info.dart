@@ -52,27 +52,28 @@ class _Additional_InfoPageState extends State<Additional_InfoPage> {
             ),
           ),
           appBar: AppBar(
+
             title: Text(
-              'Activities',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+              'Additional Information',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
             bottom: TabBar(tabs: [
               Tab(
                 child: Text(
-                  'Activities',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  'Additional Information',
+                  style: TextStyle(color: Colors.black, fontSize: 15),
                 ),
               ),
               Tab(
                 child: Text(
                   'Example',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
               ),
               Tab(
                 child: Text(
                   'Help',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
               ),
             ]),

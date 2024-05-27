@@ -96,41 +96,7 @@ class _SummaryPageState extends State<SummaryPage> {
                       universal_HintText: 'Summary',
                       sectionTitle_Controlller: txtsummary_ST),
 
-                  // Container(
-                  //   height: h * 0.110,
-                  //   width: w * 0.900,
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.white,
-                  //     boxShadow: [
-                  //       BoxShadow(
-                  //         color: Colors.black54,
-                  //         blurRadius: 1,
-                  //         spreadRadius: 1,
-                  //         offset: Offset(0, 1),
-                  //       )
-                  //     ],
-                  //     borderRadius: BorderRadius.circular(14),
-                  //   ),
-                  //   child: Column(
-                  //     children: [
-                  //       Padding(
-                  //         padding: const EdgeInsets.only(left: 16),
-                  //         child: Align(
-                  //           alignment: Alignment.centerLeft,
-                  //           child: Text(
-                  //             'Section Title',
-                  //             style: TextStyle(
-                  //               fontSize: 15,
-                  //               fontWeight: FontWeight.w600,
-                  //             ),
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       Summary_TextFormfield(w * 0.850,
-                  //           summaryHintTExt: 'Summary', summaryMaxLines: 1),
-                  //     ],
-                  //   ),
-                  // ),
+
                   SizedBox(
                     height: h * 0.020,
                   ),

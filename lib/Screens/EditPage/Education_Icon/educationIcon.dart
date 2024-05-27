@@ -41,7 +41,7 @@ class _EducationIconState extends State<EducationIcon> {
                 Edu_Course = txtEdu_course.text;
                 Edu_Grade = txtEdu_grade.text;
                 Edu_School = txtEdu_school.text;
-                Edu_ST = txtEdu_school.text;
+                Edu_ST = txtEdu_ST.text;
                 Navigator.of(context).pushNamed('/editpage');
               },
               child: Container(

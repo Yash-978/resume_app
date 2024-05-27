@@ -41,6 +41,7 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
+
           bottomNavigationBar: BottomAppBar(
             height: h * 0.090,
             padding: EdgeInsets.only(left: 280, bottom: 10, top: 10),
@@ -86,6 +87,9 @@ class _PersonalInfo_PageState extends State<PersonalInfo_Page> {
             ),
           ),
           appBar: AppBar(
+            title: Text(
+              'Personal Information',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),
+            ),
             bottom: TabBar(
               tabs: [
                 Tab(

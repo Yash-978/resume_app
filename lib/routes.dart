@@ -21,12 +21,15 @@ import 'Screens/EditPage/Summary/summary.dart';
 import 'Screens/EditPage/editPage.dart';
 import 'Screens/Enterpage/enterPage.dart';
 import 'Screens/Pdf.dart';
+import 'Screens/SplashScreen/splashScreen.dart';
 
 
 class AppRoutes
 {
   static Map<String,Widget Function (BuildContext)>routes={
-    '/':(context)=>EntryPage(),
+
+    '/':(context)=>SplashPage(),
+    '/entry':(context)=>EntryPage(),
     '/pdftrail':(context)=>PdfTrail(),
     '/editpage':(context)=>Edit_Page(),
     '/education':(context)=>EducationIcon(),
